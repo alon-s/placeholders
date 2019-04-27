@@ -2,13 +2,14 @@ import React from "react";
 import range from "lodash/range";
 import "./EmptySideBarView.scss";
 import random from "lodash/random";
+import length from "./placeholderLength.scss";
 
-const lengths = ["long", "medium", "short", "very-short"];
+const lengthClasses = lengths.map(item => item.split(':')[0]);
 function EmptySideBarView({ amount }) {
   return (
     <div className="empty-facets">
       {range(amount).map(index => {
-        const currentLength = lengths[random(lengths.length)];
+        const currentLength = lengthClasses[random(lengthClasses.length)];
         return <div key={index} className={`placeholder ${currentLength}`} />;
       })}
     </div>
