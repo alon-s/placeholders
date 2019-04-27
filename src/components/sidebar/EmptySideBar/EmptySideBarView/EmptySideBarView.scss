@@ -1,0 +1,22 @@
+@import './placeholderLength';
+
+.empty-facets {
+  height: 100%;
+
+  .placeholder {
+    opacity: 0.7;
+    background: grey;
+    border-radius: 5px;
+    height: 25px;
+    
+    &:not(:last-child) {
+      margin-block-end: 12px;
+    }
+
+    @each $length, $percent in $lengths {
+      &.#{$length} {
+        width: $percent;
+      }
+    }
+  }
+}
