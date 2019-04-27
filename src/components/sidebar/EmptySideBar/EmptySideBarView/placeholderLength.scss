@@ -4,3 +4,7 @@ $lengths: (
   short: 50%,
   very-short: 25%
 );
+
+:export {
+  lengths: $lengths;
+}
